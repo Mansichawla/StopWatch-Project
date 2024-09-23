@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">STOPWATCH </h1>
+      <p id="currentTime">00:00:00</p>
+      
+        <span id ="hour"></span>
+      <span id ="min"></span>
+      <span id ="seconds"></span>
+      
+   
+      
+     
+      <button id ='start'>start</button>
+      <button id = 'pause'>pause</button>
+      <button id = 'reset'>reset </button>
+  <script>
+   
+
+      let seconds = 59
+      let timerId;
+      
+      document.getElementById('start').onclick=start
+      document.getElementById('reset').onclick =reset
+      
+      
+      
+      
+      function start(){
+      timerId= setInterval(()=>{
+        document.getElementById('currentTime').innerHTML=new Date(seconds*1000).toISOString().slice(11,19)
+        
+      seconds =seconds+1  
+      },1000)
+      }
+      
+      const pause =()=>{
+      clearInterval(timerId)
+      }
+      document.getElementById('pause').onclick=pause
+      
+      
+      function reset(){
+      let seconds= 0;
+      document.getElementById('currentTime').innerHTML=0
+      document.getElementById('hour').innerHTML=0
+      document.getElementById('min').innerHTML=0
+      document.getElementById('seconds').innerHTML=0
+      }
+        </script>
+  </body>
+</html>
