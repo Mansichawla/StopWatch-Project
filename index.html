@@ -37,7 +37,15 @@
       timerId= setInterval(()=>{
         document.getElementById('currentTime').innerHTML=new Date(seconds*1000).toISOString().slice(11,19)
         
-      seconds =seconds+1  
+      seconds =seconds+1 
+    //   let sec,min,hour;
+    //   hour =Math.floor(seconds/60/60)
+    //   min=Math.floor(seconds/60)-hour*60
+    //   sec =Math.floor(seconds)-hour*60*60 - min*60
+    //   document.getElementById('hour').innerHTML=hour
+    //   document.getElementById('min').innerHTML=min
+    //   document.getElementById('sec').innerHTML=sec
+       
       },1000)
       }
       
